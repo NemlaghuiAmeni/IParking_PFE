@@ -1,0 +1,53 @@
+
+  <div class="testbox">
+    <form action="/">
+
+        <label for="location_id" class="formLabel"><h3 style="color: rgb(87, 85, 85);">Choose Parking</h3></label>
+        <select (change)="filterChanged($event.target.value)" class="form-control form-control-lg" ([ngModel])="selected">
+          <option></option>
+          <option class="form-control form-control-lg" *ngFor="let m of marker" style="font-size: 16px;" [ngValue]="m">{{m.name}}</option>
+        </select>
+        <div class="container" style="margin-top:10px">
+          <div class="row row-stat">
+          <div class="col-md-3">
+            <div class="card-counter primary">
+              <i class="fa fa-map-marker"></i>
+              <span class="count-numbers">{{nbt}}</span>
+              <span class="count-name">Total number of places</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card-counter danger">
+              <i class="fa fa-users"></i>
+              <span class="count-numbers">{{nbv}}</span>
+              <span class="count-name">Number of reserved places</span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card-counter success">
+              <i class="fa fa-car"></i>
+                          <span class="count-numbers">{{m}}</span>
+              <span class="count-name">Number of cars in the Park</span>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card-counter info">
+              <i class="fa fa-dollar"></i>
+              <span class="count-numbers">{{priceT}}</span>
+              <span class="count-name">Total price</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 10px; margin-left: 40px;">
+        <div class="col-md-12 col-lg-6">
+                <app-bar-chart></app-bar-chart>
+        </div>
+
+    </div>
+
+  </form>
+  </div>

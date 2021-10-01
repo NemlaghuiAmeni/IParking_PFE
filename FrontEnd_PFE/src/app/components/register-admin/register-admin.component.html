@@ -1,0 +1,45 @@
+
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form class="form">
+        <h1>Create Account
+        </h1>
+
+          <h5>It's free and always will be.</h5>
+
+
+          <input type="text" class="form-control" [(ngModel)]="registerUserData.username" name="email" placeholder="Username">
+
+
+
+          <input type="email" class="form-control" [(ngModel)]="registerUserData.email" name="email" id="exampleInputEmail1" placeholder="E-mail" >
+
+        <div class="alert alert-danger" role="alert" *ngIf="valid == true" >
+        </div>
+
+
+          <input type="password" class="form-control" [(ngModel)]="registerUserData.password"  name="password" id="exampleInputPassword1" placeholder="Password">
+
+        <div class="alert alert-danger" role="alert" *ngIf="length == true" >
+        </div>
+        <button type="button"  (click)="registerUser()" class="btn btn-primary float-right">Submit</button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h1>Welcome Back!</h1>
+          <p>To keep connected with us please login with your personal info</p>
+          <button class="ghost" id="signIn" routerLink="/loginadmin">Sign In</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <footer>
+    <p>
+      Designed By
+      <a target="_blank" href="https://treetronix.com/">Treetronix</a>
+    </p>
+  </footer>

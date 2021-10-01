@@ -1,0 +1,45 @@
+<div class="sidebar hidden-sm-down">
+    <ul class="nav in" id="side-menu">
+
+        <li class="user-pro">
+            <a href="#/dashboard" class="text-center">
+                <div class="profile-img">
+                    <img src="assets/images/amenii.jpg"/>
+                </div>
+                <span>Menu</span>
+                <small class="text-center"></small>
+            </a>
+        </li>
+        <li><a [routerLink]="['/dashboard']" [routerLinkActive]="['active']" class="waves-effect"><i class="fa fa-home"></i> <span
+                class="hide-menu">Dashboard</span></a></li>
+        <!-- <li class=""><a href="javascript:void(0);" class="waves-effect"><i class="fa fa-envelope-o"></i> <span
+                class="hide-menu"> Mailbox <span class="fa arrow"></span><span
+                class="label label-rouded label-danger pull-right">6</span></span></a>
+        </li> -->
+        <li>
+            <a [routerLink]="['/reservations']" [routerLinkActive]="['active']">
+                <i class="fa fa-edit"></i>
+                <span class="hide-menu">  Reservations</span>
+            </a>
+        </li>
+        <li>
+            <a  [routerLink]="['/parks']" [routerLinkActive]="['active']">
+                <i class="fa fa-car"></i>
+                <span class="hide-menu">  Parks</span>
+            </a>
+        </li>
+        <li>
+            <a  [routerLink]="['/places']" [routerLinkActive]="['active']">
+                <i class="fa fa-map-marker"></i>
+                <span class="hide-menu">  Places</span>
+            </a>
+        </li>
+        <li>
+          <a  [routerLink]="['/add-admin']" [routerLinkActive]="['active']">
+              <i class="fa fa-user"></i>
+              <span class="hide-menu">  Users</span>
+          </a>
+      </li>
+ 
+    </ul>
+</div>

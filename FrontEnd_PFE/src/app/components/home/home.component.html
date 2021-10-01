@@ -1,0 +1,763 @@
+
+<body class="preload">
+  <app-navbar></app-navbar>
+  <header>
+    <div class="headerwrapper">
+        <div class="header-left">
+          <img src="assets/images/ll.png" style="height: 50px;  margin-top: 5px; margin-left: 15px;">
+        </div>
+        <div class="header-right">
+          <a routerLink="/home" style="margin-right: 50px; color:rgb(243, 235, 235);">{{'HOME' | translate }}</a>
+          <a routerLink="/map"style="margin-right: 50px;color:rgb(253, 251, 251);">{{'MAP' | translate }}</a>
+          <a routerLink="/consult" style="margin-right: 35px;color:rgb(253, 251, 251);">{{'CONSULT' | translate }}</a>
+          <a routerLink="/contact" style="margin-right: 40px;color:rgb(253, 251, 251);">{{'CONTACT US' | translate }}</a>
+          <a routerLink="/price" style="margin-right: 40px;color:rgb(253, 251, 251);">{{'PRICES' | translate }}</a>
+
+          <a routerLink="/" style="margin-right: 30px;color:rgb(253, 251, 251);">{{'LOGOUT' | translate }}</a>
+        <div class="header-right">
+        <a  style="margin-right: 30px;color:rgb(248, 245, 245);">{{'lang' | translate }}</a>
+    <select class="form-control" (change)="FilterChanged($event.target.value)" [(ngModel)]="selectedP" >
+           <option style="color:#e41212"> en</option>
+           <option style="color:rgb(61, 0, 160)">fr</option>
+           <option style="color:rgb(50, 155, 8)">ar</option>
+         </select>
+           </div>
+       </div>
+       </div>
+ </header>
+
+  <ngb-carousel style="margin-bottom: 0;"interval=2000 [activeId]="'firstSlide'" [showNavigationIndicators]=true>
+    <ng-template ngbSlide>
+        <div class="carousel-caption" style="background-color: transparent ;">
+            <h1
+                style="color:#fffefe; text-align: center; font-weight: bold; font-size: 2em; ">
+                Ｔｒｅｅｔｒｏｎｉｘ Ｐａｒｋｉｎｇ</h1>
+            <h1
+                style="color: #f7f0f0;text-align: center; font-weight: bold; font-size: 2em; ">
+                Ｔｏｇｅｔｈｅｒ ｆｏｒ ｙｏｕｒ Ｃｏｍｆｏｒｔ</h1>
+            <h2
+            style="color:#faf6f6;font-family: 'Courier New', Courier, monospace; font-weight: bold; font-size: 2em;text-align: center; margin-top: 70px;">
+            Ｂｏｏｋ Ｎｏｗ</h2>
+            <span class="material-icons"
+            style="background-color: #fffdfd; font-size: 3em;  color:#fffefe">arrow_downward</span>
+        <span class="material-icons"
+            style="background-color: #faf6f6; font-size: 3em; color:#faf6f6">arrow_downward</span>
+        <span class="material-icons"
+            style="background-color: #f8f6f6; font-size: 3em;color:#faf5f5">arrow_downward</span>
+           
+        </div>
+
+        <div class="picsum-img-wrapper">
+            <img src="assets/images/park3.jpg" style="opacity:0.8; width: 100%; height: 648px; " alt="Random first slide">
+
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img src="assets/images/car2.jpeg" style="height: 648px; width: 100%;"alt="Random second slide">
+        </div>
+        <div class="carousel-caption" style="margin-bottom: 250px; background-color: transparent ;">
+            <h3
+                style="color: #3f3e3e; text-align: center; font-weight: bold; font-size: 2em; ">
+                Ｒｅａｌ  Ｗｏｒｌｄ  Ｓｏｌｕｔｉｏｎｓ </h3>
+                <br>
+            <p style="color: #3f3e3e; text-align: center; font-family: 'Courier New', Courier, monospace; font-size: 1.1em; ">
+                A vehicle parking system that helps drivers find a vacant spot.
+                <br> Using sensors in each parking space that detect the presence or absence of a vehicle,
+                <br> signs direct incoming drivers to available locations.</p>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="carousel-caption" style="margin-bottom: 390px; background-color: transparent ;">
+            <h3
+                style="color: rgb(63, 62, 62); text-align: center; font-family: 'Courier New', Courier, monospace; font-size: 2em; ">
+                With steady steps towards achieving the dream </h3>
+            <p
+                style=" color: rgb(63, 62, 62);text-align: center; font-family: 'Courier New', Courier, monospace; font-size:1em; margin-top: 150pw; ">
+                "Smart Cities" are a new mode of urban governance and managment "where digital
+                technologies whould play a preponderant role in improving relationships and flows in a given area".
+              They are part of the process implemented by local authorities concerned about
+              improving their public service performance in times
+               of economic crisis.</p>
+        </div>
+        <div class="picsum-img-wrapper">
+            <img src="assets/images/slide3.jpg" style="opacity:1; height: 648px; width: 100%;" alt="Random third slide">
+        </div>
+
+    </ng-template>
+</ngb-carousel>
+<div class="spacer spacer-1"></div>
+
+	<div class="main" style="background-image: url(assets/images/treetronix.png); background-repeat: no-repeat; background-size: 2000px; ">
+            <div class="container" >
+                <div id="pjCpContainer">
+                  <h3
+                  style="color:#3d3a3a; text-align: center; font-size: 1.5em;font-weight: bold; padding-top: 15px; ">
+                  {{'𝑩𝒐𝒐𝒌 𝒂 𝒔𝒆𝒄𝒖𝒓𝒆 𝒑𝒂𝒓𝒌𝒊𝒏𝒈 𝒔𝒑𝒐𝒕 𝒘𝒊𝒕𝒉 𝒖𝒔 ! ' | translate }}
+                
+                  
+                </h3>
+                    <div class="row">
+                        <div class="col-lg-10 col-lg-offset-1 col-xs-12">
+                          <div class="hero-text-desc"><span class="wc-editable" data-pk="ws_home_slide_desc_1"
+                        data-type="plaintext"></span></div>
+                            <div class="form cms-e-section">
+
+                              <form [formGroup]="form" id="pjCpSearchForm" action="#" method="post"
+                                    class="pjCpSearchForm" novalidate="novalidate">
+                                    <div id="pjCpCalendarLocale" style="display: none;"
+                                        data-months="January_February_March_April_May_June_July_August_September_October_November_December"
+                                        data-days="Su_Mo_Tu_We_Th_Fr_Sa"></div>
+
+                                    <div class="form-group">
+                                      <label> 𝑃𝑎𝑟𝑘</label>
+                                        <select (change)="selectedpark($event.target.value)" class="form-control form-control-lg" >
+
+                                            <option class="form-control form-control-lg" *ngFor="let m of parks"  [ngValue]="m.name">{{m.name}}</option>
+                                          </select>
+
+                                        <!--label for="location_id" class="formLabel"><span class="wc-editable"
+                                                data-pk="ws_location"
+                                                data-type="text">{{'HOME.Location' | translate }}</span></label-->
+
+
+                                        <!-- <select name="location_id" style="height:40px;" id="location_id" class="form-control" (change)="filterChanged($event.target.value)" [(ngModel)]="reserv.name" name="name" formControlName="name" >
+                                <option value=""> </option>
+                                <option *ngFor="let m of listParking"  [ngValue]="m.name">{{m.name}}</option>
+                            </select> -->
+                                        <div class="ng-autocomplete" style="width: 100%;">
+
+                                            <!--ng-autocomplete [(ngModel)]="reserv.name" [data]="data"
+                                                [searchKeyword]="keyword" (selected)='selectEvent($event)'
+                                                (inputChanged)='onChangeSearch($event)'
+                                                (inputFocused)='onFocused($event)' [itemTemplate]="itemTemplate"
+                                                [notFoundTemplate]="notFoundTemplate">
+
+                                            </ng-autocomplete-->
+
+                                            <ng-template #itemTemplate let-item>
+                                                <a [innerHTML]="item.name"></a>
+                                            </ng-template>
+
+                                            <ng-template #notFoundTemplate let-notFound>
+                                                <div [innerHTML]="notFound"></div>
+                                            </ng-template>
+                                        </div>
+
+                                        <p>
+
+                                            <span class="wc-editable" data-pk="ws_cannot_find_location"
+                                                data-type="text"><label>{{'𝑃𝑙𝑎𝑐𝑒' | translate }}</label></span> <a
+                                                routerLink="/pres"><span class="wc-editable" data-pk="ws_view_map"
+                                                    data-type="text"></span></a>
+                                        </p>
+                                        <div>
+                                            <div>
+                                                <select (change)="selectedplace($event.target.value)"  #selectedValue class="form-control form-control-lg"  id="selectedValue" ([ngModel])="selectedValue">
+
+                                                    <option class="form-control form-control-lg" *ngFor="let m of listPlace"  [ngValue]="">{{m.name}}</option>
+                                                  </select>
+                                            </div>
+                                            <label for="location_id" class="formLabel"><span class="wc-editable"
+                                                    data-pk="ws_location"
+                                                    data-type="text">{{'𝑀𝑎𝑡𝑟𝑖𝑐𝑢𝑙𝑒'| translate }}</span></label>
+                                            <input class="form-control " style="height:40px;"
+                                                [(ngModel)]="reserv.matricule" formControlName="matricule"
+                                                placeholder="198 TUN 1254" name="matricule">
+                                        </div>
+                                    </div>
+                                    <label for="location_id" class="formLabel">
+                                      <span class="wc-editable" data-pk="ws_location" data-type="text">{{'𝑃𝑟𝑖𝑐𝑒' | translate }}</span></label>
+                                      <!--input class="form-control "  style="height:40px;"
+                                      [(ngModel)]="reserv.Tpark" name="Tpark" formControlName="Tpark"!-->
+                                          <div>
+                                   <select class="form-control" (change)="FilterChanged($event.target.value)" [(ngModel)]="selectedP" >
+                                          <option></option>
+                                          <option style="color:black"> {{'Price per hour' | translate }}</option>
+                                          <option style="color:black">{{'Price per day' | translate }}</option>
+                                          <option style="color:black">{{'Price per month' | translate }}</option>
+                                        </select>
+                                          </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div>
+                                                <label style="margin-top: 25px;"><span class="wc-editable"
+                                                        data-pk="ws_entry_date_time"
+                                                        data-type="text">{{'𝐸𝑛𝑡𝑟𝑦 𝑑𝑎𝑡𝑒' | translate }}</span></label>
+
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-xs-12" style="margin-top: 25px;">
+                                                        <div class="form-group">
+                                                            <div class="input-group datePick datePickFrom">
+                                                                <span class="input-group-addon">
+                                                                    <span class="glyphicon glyphicon-calendar"
+                                                                        aria-hidden="true"></span>
+                                                                </span>
+
+                                                                <input type="text" id="dateOfBirth" name="dateOfBirth"
+                                                                    class="form-control" type="date"
+                                                                    [(ngModel)]="reserv.dateE" name="dateE"
+                                                                    formControlName="dateE">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="form-group">
+                                                            <div class="input-group timePick timePickFrom"
+                                                                data-rel="from">
+                                                                <div class="col-md-6">
+                                                                  <div class="item">
+                                                                  <label style="font-size: 16px;">{{'𝐸𝑛𝑡𝑟𝑦 𝑇𝑖𝑚𝑒' | translate }}</label>
+                                                                  <input type="time" name="name" [(ngModel)]="reserv.timeE" name="timeE"
+                                                                  formControlName="timeE"style="color: black ;height: 35px !important ;" />
+                                                                  <i class="fas fa-clock"></i>
+                                                                  </div>
+                                                                </div>
+                                                                <!--<timepicker [(ngModel)]="reserv.timeE" name="timeE"
+                                                                    formControlName="timeE"
+                                                                    style="height: 40px !important;"></timepicker>-->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6 col-xs-12">
+                                            <div class="dateTimePick">
+                                                <label style="margin-top: 25px;"><span class="wc-editable"
+                                                        data-pk="ws_exit_date_time"
+                                                        data-type="text">{{'𝐸𝑥𝑖𝑡 𝑑𝑎𝑡𝑒' | translate }}</span></label>
+
+                                                <div class="row">
+                                                    <div class="col-sm-6 col-xs-12" style="margin-top: 25px;">
+                                                        <div class="form-group">
+                                                            <div class="input-group datePick datePickTo">
+                                                                <span class="input-group-addon">
+                                                                    <span class="glyphicon glyphicon-calendar"
+                                                                        aria-hidden="true"></span>
+                                                                </span>
+
+                                                                <input type="text" id="dateOfBirth"
+                                                                    [(ngModel)]="reserv.dateS" name="dateS"
+                                                                    class="form-control" formControlName="dateS"
+                                                                    type="date">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-6 col-xs-12">
+                                                        <div class="form-group">
+                                                            <div class="input-group timePick timePickTo" data-rel="to">
+
+                                                                <div class="col-md-6">
+                                                                  <div class="item">
+                                                                  <label style="font-size: 16px;">{{'𝐸𝑥𝑖𝑡 𝑡𝑖𝑚𝑒' | translate }}</label>
+                                                                  <input type="time" name="name"  [(ngModel)]="reserv.timeS" name="timeS"
+                                                                  formControlName="timeS" style="color: rgb(0, 0, 0);height: 35px !important;"/>
+                                                                  <i class="fas fa-clock"></i>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                                <!--<timepicker [(ngModel)]="reserv.timeS" name="timeS"
+                                                                    formControlName="timeS"></timepicker>-->
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <!--div>
+                                        <label for="location_id" class="formLabel"><span class="wc-editable"
+                                                data-pk="ws_location"
+                                                data-type="text">{{'HOME.place' | translate }}</span></label>
+                                        <span class="material-icons" (click)="choosePlace()">touch_app</span>
+                                    </div-->
+
+                                    <div class="form-group text-center">
+                                        <button type="submit" (click)="Reservation()" class="btn btn-primary" routerLink="/payment"><span
+                                                class="wc-editable" data-pk="ws_btn_choose_your_space"
+                                                data-type="action">{{'Submit' | translate }}</span></button>
+                                        <a name="book"></a>
+                                        <p style="text-align: center;" *ngIf="timeRespect()">
+                                            HOME.condition</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="spacer spacer-1"></div>
+                <div class="cms-e-group" data-id="620" data-hmac="3eecc8b19c7148bdac2800eecae47d13"><div class="custom-layout">
+                  <div class="container">
+                    <div class="cms-e-section">
+                      <div data-blockid="288">
+                        <h2 class="cms-e-element text-center">
+                          <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="288">
+                            A smart solution for Everyone
+                            <br> SOLUTIONS <br> <i class="fa fa-sort-down" style="color:grey;"> </i>
+                          </span>
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                </div></div>
+
+              <ngb-carousel class="carousel" [showNavigationArrows]="true" [showNavigationIndicators]="true" interval=2000>
+                <ng-template ngbSlide>
+                    <div class="item" alt="Random first slide">
+                        <div class="row-fluid">
+
+                          <div class="cms-e-group" data-id="614" data-hmac="a1a2a8f73afa2522cec947228efddc4a"><div class="custom-layout">
+                            <div class="container">
+                              <div class="row row-triple-col">
+
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="text-center cl-mt-15 cms-e-section">
+                                    <div class="cl-vector-icon">
+                                      <div data-blockid="276" class="hidden"></div>					</div>
+
+                                    <div class="cl-paragraph">
+                                      <div data-blockid="277">
+                                        <h2 class="cms-e-element cl-box-title text-center">
+                                          <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="277">
+                                            <span class="material-icons" style="font-size: 3em;">school</span>
+                                            <br>
+                                            Universities &amp; Education Facilities
+
+                                          </span>
+                                        </h2>
+                                      </div>
+                                      <div data-blockid="278">
+                                        <div class="cms-e-element text-center">
+                                          <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="278">
+                                            Campuses always provide a unique challenge with regards to parking, as not only do they tend to occupy multiple car parks on a sprawling footprint,<br />
+                                                but they also need to cater for the different needs of students, staff and visitors.
+                                              </span>
+                                            </div>
+                                          </div>
+                                            </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="text-center cl-mt-15 cms-e-section">
+                                    <div class="cl-vector-icon">
+                                      <div data-blockid="279" class="hidden"></div>					</div>
+
+                                    <div class="cl-paragraph">
+                                      <div data-blockid="280">
+                                        <h2 class="cms-e-element cl-box-title text-center">
+                                          <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="280">
+                                            <span class="material-icons" style="font-size: 3em;">local_hospital</span>
+                                            <br> Hospitals &amp; Medical Centers
+                                      </span>
+                                    </h2>
+                                  </div>
+                                  <div data-blockid="281">
+                                    <div class="cms-e-element text-center">
+                                      <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="281">
+                                         Hospitals and medical centers need to provide a range of parking options, and without proper car park management, parking spaces can be severely underutilised.
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  </div>
+                                </div>
+
+                                <div class="col-md-4 col-sm-6 col-xs-12">
+                                  <div class="text-center cl-mt-15 cms-e-section">
+                                    <div class="cl-vector-icon">
+                                      <div data-blockid="282" class="hidden"></div>					</div>
+
+                                    <div class="cl-paragraph">
+                                      <div data-blockid="283">
+                                        <h2 class="cms-e-element cl-box-title text-center">
+                                          <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="283">
+                                            <span class="material-icons" style="font-size: 3em;">local_convenience_store</span>
+                                            <br>
+                                            Supermarkets
+                                          </span>
+                                        </h2>
+                                      </div>
+                                      <div data-blockid="284">
+                                        <div class="cms-e-element text-center">
+                                          <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="284">
+                                            Smart Parking has an extensive track record working with supermarkets- both at the construction phase and as a retro-fit for current sites.
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div></div>
+                              <!--group-end:a1a2a8f73afa2522cec947228efddc4a-->
+
+                          <!--group-begin:46811bc58504741c5271ba6d2c7765cb-->
+
+
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="item" alt="Random second slide">
+                      <div class="cms-e-group" data-id="614" data-hmac="a1a2a8f73afa2522cec947228efddc4a"><div class="custom-layout">
+                        <div class="container" style="margin-left: 400px;">
+                          <div class="row">
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                              <div class="text-center cl-mt-15 cms-e-section">
+                                <div class="cl-vector-icon">
+                                  <div data-blockid="276" class="hidden"></div>
+                                </div>
+
+                                <div class="cl-paragraph">
+                                  <div data-blockid="277">
+                                    <h2 class="cms-e-element cl-box-title text-center">
+                                      <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="277">
+                                        <span class="material-icons" style="font-size: 3em;">local_airport</span>
+                                        <br>
+                                        Airports
+                                      </span>
+                                    </h2>
+                                  </div>
+                                  <div data-blockid="278">
+                                    <div class="cms-e-element text-center">
+                                        <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="278">
+                                          Vehicle access to airports can turn into chaos if not properly managed, and Smart Parking can offer a single system that caters for a variety of parking and drop off options.
+                                        </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                              <div class="text-center cl-mt-15 cms-e-section">
+                                <div class="cl-vector-icon">
+                                  <div data-blockid="276" class="hidden"></div>
+                                </div>
+
+                                <div class="cl-paragraph">
+                                  <div data-blockid="277">
+                                    <h2 class="cms-e-element cl-box-title text-center">
+                                      <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="277">
+                                        <span class="material-icons" style="font-size: 3em;">account_balance</span>
+                                        <br>
+                                        Councils & Municipalities
+                                      </span>
+                                    </h2>
+                                  </div>
+                                  <div data-blockid="278">
+                                    <div class="cms-e-element text-center">
+                                        <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="278">
+                                          Smart Parking has extensive experience working with councils and municipalities across the globe most of which have a smart city initiative that includes a smart parking system as an integrated component.
+                                        </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+
+
+
+                          </div>
+                        </div>
+                      </div></div>
+                          <!--group-end:a1a2a8f73afa2522cec947228efddc4a-->
+
+                      <!--group-begin:46811bc58504741c5271ba6d2c7765cb-->
+              </div>
+              </ng-template>
+              <ng-template ngbSlide>
+                <div class="item" alt="Random third slide">
+
+
+                <div class="cms-e-group" data-id="614" data-hmac="a1a2a8f73afa2522cec947228efddc4a"><div class="custom-layout">
+                  <div class="container" style="margin-left: 400px;">
+                    <div class="row">
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="text-center cl-mt-15 cms-e-section">
+                          <div class="cl-vector-icon">
+                            <div data-blockid="276" class="hidden"></div>
+                          </div>
+
+                          <div class="cl-paragraph">
+                            <div data-blockid="277">
+                              <h2 class="cms-e-element cl-box-title text-center">
+                                <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="277">
+                                  <span class="material-icons" style="font-size: 3.73em;">shopping_cart</span>
+                                  <br>
+                                  Shopping Centers & Retail
+                                </span>
+                              </h2>
+                            </div>
+                            <div data-blockid="278">
+                              <div class="cms-e-element text-center">
+                                  <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="278">
+                                    In the competitive world of retail, parking is an essential service to get right as a positive parking experience can draw in more customers, and have a huge impact on footfall and store takings.
+                                  </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="text-center cl-mt-15 cms-e-section">
+                          <div class="cl-vector-icon">
+                            <div data-blockid="276" class="hidden"></div>
+                          </div>
+
+                          <div class="cl-paragraph">
+                            <div data-blockid="277">
+                              <h2 class="cms-e-element cl-box-title text-center">
+                                <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="277">
+                                  <span class="material-icons" style="font-size: 3em;">store</span>
+                                  <br>
+                                  Parking Operators
+                                </span>
+                              </h2>
+                            </div>
+                            <div data-blockid="278">
+                              <div class="cms-e-element text-center">
+                                  <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="278">
+                                    In the competitive world of retail, parking is an essential service to get right as a positive parking experience can draw in more customers, and have a huge impact on footfall and store takings.
+
+                                  </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    </div>
+                  </div>
+                </div></div>
+              </ng-template>
+              </ngb-carousel>
+              <div class="spacer spacer-1"></div>
+
+
+                  <div class="cms-e-group" data-id="621" data-hmac="60cc110c6e3748944b53400dd4aef122"><div class="custom-layout">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3 col-xs-12">
+                      <div class="text-center cl-mt-15 cl-mb-15 cms-e-section">
+                        <div class="cl-vector-icon">
+                          <div data-blockid="289" class="hidden"></div>					</div>
+
+                        <div class="cl-paragraph">
+                          <div data-blockid="290">
+                            </div>
+
+                                <h1 class="cms-e-element text-center">
+                                  <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="290">
+                                    ABOUT US
+                                  </span>
+                                </h1>
+                                <div data-blockid="291">
+                                  <div class="cms-e-element text-center">
+                                      <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="291">
+                                        Treetronix is a startup specializing in the development and integration of embedded electronics, development of information systems, development of Internet of Things (IOT) solutions and artificial intelligence (AI) solutions.
+                                      </span>
+                                  </div>
+                                </div>
+
+                                  </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div></div>
+              <div class="spacer spacer-1"></div>
+
+                  <!--group-end:60cc110c6e3748944b53400dd4aef122-->
+
+              <!--group-begin:ca3bf6535ed21d54f657e44625e638a2-->
+
+                  <!--group-end:ca3bf6535ed21d54f657e44625e638a2-->
+
+              <!--group-begin:064ee8c4e4747e63dfeea1c0b61ddb1c-->
+                  <div class="cms-e-group" data-id="624" data-hmac="064ee8c4e4747e63dfeea1c0b61ddb1c"><div class="custom-layout">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                      <div class="cms-e-section cl-mt-15">
+                        <div data-blockid="293">
+                          <div class="wc-thumb btn-gallery-replace "><img class="wc-image cms-e-element cl-img img-responsive" src="assets/images/mission.png" alt="" title="" data-id="757">
+                          </div>
+                        </div>
+                        <div class="cl-paragraph">
+                          <div data-blockid="294">
+                            <h3 class="cms-e-element text-center"><span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="294">
+                              Our Mission
+                            </span>
+                          </h3>
+                        </div>
+                          <div data-blockid="295"><div class="cms-e-element"><span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="295">Offer quality solutions that meet the needs and expectations of our customers in order to obtain overall customer satisfaction.</span></div></div>					</div>
+
+                        <div data-blockid="296" class="hidden"></div>				</div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-12">
+                      <div class="cms-e-section cl-mt-15">
+                        <div data-blockid="297"><div class="wc-thumb btn-gallery-replace "><img class="wc-image cms-e-element cl-img img-responsive" src="assets/images/objectif.png" alt="" title="" data-id="758"></div></div>
+                        <div class="cl-paragraph">
+                          <div data-blockid="298"><h3 class="cms-e-element text-center"><span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="298">Our Goal</span></h3></div>
+                          <div data-blockid="299"><div class="cms-e-element"><span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="299">Improve the performance of companies as a strategic partner.</span></div></div>					</div>
+
+                        <div data-blockid="300" class="hidden"></div>				</div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-12">
+                      <div class="cms-e-section cl-mt-15">
+                        <div data-blockid="301"><div class="wc-thumb btn-gallery-replace "><img class="wc-image cms-e-element cl-img img-responsive" src="assets/images/vision.png" alt="" title="" data-id="759"></div></div>
+                        <div class="cl-paragraph">
+                          <div data-blockid="302"><h3 class="cms-e-element text-center"><span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="302">Our Vision</span></h3></div>
+                          <div data-blockid="303"><div class="cms-e-element"><span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="textarea" data-foreign_id="303">The development of innovative, connected and intelligent products and solutions, targeting the needs of different sectors.</span></div></div>					</div>
+
+                        <div data-blockid="304" class="hidden"></div>				</div>
+                    </div>
+                  </div>
+                </div>
+              </div></div>
+                  <!--group-end:064ee8c4e4747e63dfeea1c0b61ddb1c-->
+
+              <!--section-end:5018c56cd80d3df7245ac3763921e763-->
+                <!--e:5018c56cd80d3df7245ac3763921e763-->
+
+              <!--e:0-->
+                 <footer class="footer" id="section-contact" style="background-color:  #2b303a;">
+                <div class="footer-contact-info-outer">
+                  <div class="container">
+                    <div class="cms-e-section">
+                      <div class="row contact-info-row">
+                                    <div class="col-lg-3 col-sm-6 col-xs-12">
+                            <div class="footer-contact-info">
+                              <div class="icon">
+                                <i class="fa fa-phone"></i>
+                              </div>
+                              <div class="info-content">
+                                <div class="info-content-label">
+                                  <span class="wc-editable" data-pk="ws_call_us_now" data-type="text">Call us now</span>
+                                </div>
+                                <div class="info-content-text">
+                                  <a href="tel:+216 71 111 100" style="color: darkcyan;">
+                                    <span class="wc-editable" data-pk="ws_contact_phone_number" data-type="text">
+                                      +216 71 111 100
+                                    </span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                                      <div class="col-lg-3 col-sm-6 col-xs-12">
+                            <div class="footer-contact-info">
+                              <div class="icon">
+                                <i class="fa fa-envelope"></i>
+                              </div>
+                              <div class="info-content">
+                                <div class="info-content-label">
+                                  <span class="wc-editable" data-pk="ws_send_us_a_message" data-type="text">
+                                    Or send us a message
+                                  </span>
+                                </div>
+                                <div class="info-content-text">
+                                  <a href="mailto:contact@treetronix.com;" style="color: darkcyan;">
+                                    <span class="wc-editable" data-pk="ws_contact_email_address" data-type="text">
+                                      contact@treetronix.com											</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                                  </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-nav">
+                  <div class="container cms-e-section">  
+                    <ul>
+                              <li><a routerLink="/home">{{'Start' | translate }}</a></li>
+                              <li><a routerLink="/map">{{'Our Parks' | translate }}</a></li>
+                              <li><a routerLink="/contact">{{'Contact Us' |translate }}</a></li>
+                              <li><a routerLink="/price">{{'Our Price ' |translate }}</a></li>
+                              </ul>
+                  </div>
+                </div>
+                <div class="section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-sm-6 col-xs-12">
+                        <p class="copyright cms-e-section">&copy; 2021
+                          <a href="https://treetronix.com/">
+                            <span class="wc-editable" data-pk="ws_car_name" data-type="text">
+                              Treetronix
+                            </span>
+
+                          </a> | <span data-blockid="98">
+                            <span class="cms-e-element">
+                              <span class="wc-editable wc-element" data-model="pjBlockElement" data-field="text" data-type="text" data-foreign_id="98">
+                                All rights reserved
+                              </span>
+                            </span>
+                          </span>
+                        </p>
+
+                        <p class="credits credits-secondary">
+                          <a href="./" target="_blank" rel="noopener">
+                            IParking
+                          </a>
+
+                        </p>
+                      </div>
+                                <div class="col-sm-6 col-xs-12 text-right">
+                          <ul class="socials socials-secondary cms-e-section" >
+
+                            <li><a href="https://www.linkedin.com/company/treetronix/" target="_blank" class="ico" rel="noopener" aria-label="linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UC_GK8fBoBaSxTg05elGZcEQ/featured" target="_blank" class="ico" rel="noopener" aria-label="youtube"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://treetronix.com/" target="_blank" class="ico" rel="noopener" aria-label="website"><i class="fa fa-globe"></i></a></li>
+
+                          </ul>
+                        </div>
+                              </div>
+                  </div>
+                </div>
+              </footer>
+                <noscript id="deferred-styles">
+                  <link rel="stylesheet" type="text/css" href="https://trials.vevs.website/web-demo/car-parking-website/index.php?controller=pjFront&action=pjActionLoadCss&a=pjActionIndex&widget=on&script_id=8&demo=1&template=template_1&theme=theme1&font=Lato&hmac=526ccdcf6f2d84d2748639418c6f7953&md5=566f112f0f08a5ca73f814c7cd0dd945" id="deferred-sheet">
+                  </noscript>
+
+</body>
+
+
+
+
+
+
+
+
+
+

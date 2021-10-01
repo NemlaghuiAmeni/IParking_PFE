@@ -1,0 +1,71 @@
+<div class="testbox">
+  <form action="/">
+      <!--<label for="location_id" class="formLabel">
+        <h3 class="wc-editable" data-pk="ws_location"data-type="text" style="margin-top: 10px; color: rgb(77, 90, 102);"> Choose Parking</h3>
+      </label>
+      <select (change)="selectedPark($event.target.value)" name="location_id" id="location_id" class="form-control form-control-lg" class="form-control form-control-lg">
+        <option></option>
+        <option class="form-control form-control-lg" *ngFor="let m of marker" style="font-size: 16px;"  [ngValue]="m">{{m.name}}</option>
+      </select>-->
+      <div class="panel panel-default panel-table">
+        <div class="panel-heading panel-heading-no-divider"><i class="fa fa-search"></i> Search</div>
+        <div class="main" style="background-image: url(assets/images/park3.jpg); background-repeat: no-repeat; background-size: 2000px; ">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <div class="item">
+                <p>Registration Number</p>
+                <input type="text" placeholder="Filter by registration number" [(ngModel)]="searchMat" style="border-radius: 5px;">
+              </div>
+            </li>
+            <li class="nav-item">
+              <div class="item" style="margin-left: 10px;">
+                <p>Park Name</p>
+                <input type="text" placeholder="Filter by park name" [(ngModel)]="searchName" style="border-radius: 5px;">
+              </div>
+            </li>
+            </ul>
+        
+
+        </div>
+
+
+        <div class="panel panel-default panel-table">
+          <div class="panel-heading panel-heading-no-divider"> <i class="fa fa-list "></i>  Reservations</div>
+
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Registration number</th>
+                      <th>Park</th>
+                      <th>Place</th>
+                      <th>Arrival Date</th>
+                      <th>Pick Up Date</th>
+                      <th>Entry Time</th>
+                      <th>Exit Time</th>
+                      <th>Price</th>
+                      <th style="width: 5%"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let m of listR" >
+                      <th scope="col">{{m._id}}</th>
+                      <th scope="col">{{m.park}}</th>
+                      <th scope="col">{{m.palce}}</th>
+                      <th scope="col" name="date">{{m.dateDebut}}</th>
+                      <th scope="col">{{m.dateFin}}</th>
+                      <th scope="col">{{m.timeDebut}}</th>
+                      <th scope="col">{{m.timeFin}}</th>
+                      <th scope="col">{{m.Tpark}}</th>
+                      <th scope="col">
+                        <span class="material-icons" (click)="onDelete(m._id)">delete</span>
+                      </th>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+         </div>
+      </div>
+      
+  </form>
+</div>

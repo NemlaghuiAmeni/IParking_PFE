@@ -1,0 +1,9 @@
+1)partie admin:
+login:"Ameni@gmail.com"
+password:"Admin123"
+
+
+
+2)Partie user
+login:"Amanimejri@gmail.com"
+password:"Amn123"
